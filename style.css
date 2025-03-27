@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+    margin: 0 0 15px;
+}
+
+.balance {
+    margin-bottom: 20px;
+}
+
+.naira {
+    position: relative;
+    font-weight: bold;
+}
+
+.naira::before,
+.naira::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #333;
+}
+
+.naira::before {
+    top: 40%;
+}
+
+.naira::after {
+    top: 60%;
+}
+
+#expense-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#expense-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 0;
+}
+
+#expense-form input[type="date"] {
+    flex: 1.5;
+}
+
+#expense-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#expense-form #save-btn {
+    background-color: #007bff;
+}
+
+#expense-form button:hover {
+    background-color: #218838;
+}
+
+#expense-form #save-btn:hover {
+    background-color: #0056b3;
+}
+
+#expense-list {
+    list-style: none;
+    padding: 0;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.expense-item span {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.expense-item button {
+    background-color: #dc3545; /* Delete button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.expense-item .edit-btn {
+    background-color: #ffc107; /* Edit button */
+    margin-right: 10px;
+}
+
+.expense-item button:hover {
+    background-color: #c82333;
+}
+
+.expense-item .edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    #expense-form {
+        flex-direction: column;
+    }
+
+    #expense-form input,
+    #expense-form button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px; /* Consistent with larger screens */
+        font-size: 16px; /* Keep readable */
+    }
+
+    .expense-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .expense-item button {
+        width: 100%; /* Full width like Add button */
+        box-sizing: border-box;
+        padding: 8px 10px; /* Slightly adjusted for balance */
+        font-size: 14px;
+        margin-right: 0; /* Remove margin in stacked layout */
+        margin-top: 5px; /* Space between buttons */
+    }
+
+    .expense-item .edit-btn {
+        margin-right: 0; /* Reset margin */
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    #expense-form input,
+    #expense-form button {
+        font-size: 14px; /* Smaller but readable */
+        padding: 8px; /* Consistent with Edit/Delete */
+    }
+
+    .expense-item {
+        padding: 8px;
+    }
+
+    .expense-item button {
+        padding: 6px 8px; /* Slightly smaller */
+        font-size: 12px; /* Match Add button scaling */
+    }
+}
